@@ -1,0 +1,78 @@
+<!--
+  Generated template for the DetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+      <ion-title>Country Details</ion-title>
+      <ion-buttons end>
+        <button ion-button (click)="BackHome()" color="#000" style="zoom:2.0;">
+          <ion-icon name="home"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding class='content' *ngIf="selectedItem">
+  <!-- 	  <div class="item-profile" text-center #profilePic [style.background-image]="'url(' + selectedItem.flag + ')'">
+    </div> -->
+  <ion-grid>
+    <ion-row>
+      <ion-col col>
+            <img src="{{selectedItem.flag}}">
+        </ion-col>
+    </ion-row>
+    <h4><b>{{selectedItem.name}}</b></h4><hr>
+      <ion-row>
+        <!-- <fieldset> -->
+          <ion-col col>
+              <div>
+                <p><b>Capital : </b>{{selectedItem.capital}}</p>
+                <p><b>Population : </b>{{selectedItem.population}}</p>
+                <p><b>Timezone : </b>{{selectedItem.timezones}}</p>
+              </div>
+          </ion-col>
+          <ion-col col>
+              <p><b>Currency Code : </b>{{selectedItem.currencies[0]['code']}}</p>
+              <p><b>Name : </b> {{selectedItem.currencies[0]['name']}}</p>
+              <p><b>Symbol :</b><b style = "font-size: 20px;"> {{selectedItem.currencies[0]['symbol']}} </b></p>
+          </ion-col>
+        <!-- </fieldset> -->
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <fieldset>
+            <p><b>Region : </b>{{selectedItem.region}}</p>
+              <p><b>Subregion : </b>{{selectedItem.subregion}}</p>
+              <p><b>Area : </b>{{selectedItem.area}} </p>
+              <p><b>Numeric Code : </b>{{selectedItem.numericCode}}</p>
+            </fieldset>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+      <ion-col>
+  
+        <hr>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <fieldset>
+      <b>Borders of {{selectedItem.name}}</b>
+      <p>{{selectedItem.borders[0]}},&nbsp;
+         {{selectedItem.borders[1]}},&nbsp;
+         {{selectedItem.borders[2]}},&nbsp;
+         {{selectedItem.borders[3]}},&nbsp;
+         {{selectedItem.borders[4]}}</p>
+          </fieldset>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </ion-content>
+  <ion-footer>
+    <ion-toolbar>
+      <ion-title></ion-title>
+    </ion-toolbar>
+  </ion-footer>

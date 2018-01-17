@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Country Names
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+    <ion-list>
+      <ion-item *ngFor="let country of data" (click)="itemTapped($event, country)">
+        <ion-avatar item-left>
+          <img src="{{country.flag}}">
+        </ion-avatar>
+          <h2>{{country.name}}</h2>
+          <p>Capital: {{country.capital}}, Region: {{country.region}}</p>
+      </ion-item>
+    </ion-list>
+    <!--<ion-list>
+      <ion-item *ngFor="let user of users">
+        <ion-avatar item-start>
+          <img src="{{user.avatar}}">
+        </ion-avatar>
+        <h2>{{user.first_name}} {{user.last_name}}</h2>
+      </ion-item>
+    </ion-list-->
+
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="page < totalPage">
+   <ion-infinite-scroll-content loadingText="Loading data..." ></ion-infinite-scroll-content>
+ </ion-infinite-scroll>
+</ion-content>
